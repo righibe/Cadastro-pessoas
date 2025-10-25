@@ -1,16 +1,22 @@
 package dev.righi.CadastroDePessoas;
 
-public class PessoasModel {
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "tb_cadastro")
+public class PessoaModel {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Long id;
     String nome;
     String email;
     int idade;
 
-    public PessoasModel() {
+    public PessoaModel() {
     }
 
-    public PessoasModel(String nome, String email, int idade) {
+    public PessoaModel(String nome, String email, int idade) {
         this.nome = nome;
         this.email = email;
         this.idade = idade;
